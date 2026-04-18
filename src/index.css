@@ -1,19 +1,22 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+:@import './styles/tokens/colors.css';
 
+:root {
+  /* Typography families */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+
+  /* Link core UI variables to palette tokens */
+  --text: var(--color-text);
+  --text-h: var(--color-text-strong);
+  --bg: var(--color-bg);
+  --border: var(--color-border);
+  --code-bg: var(--color-surface);
+  --accent: var(--color-accent);
+  --accent-bg: var(--color-accent-weak);
+  --accent-border: var(--color-accent-border);
+  --social-bg: hsl(var(--color-gray-50) / 0.5);
+  --shadow: var(--color-shadow);
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
