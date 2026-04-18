@@ -1,4 +1,4 @@
-:@import './styles/tokens/colors.css';
+@import './styles/tokens/colors.css';
 
 :root {
   /* Typography families */
