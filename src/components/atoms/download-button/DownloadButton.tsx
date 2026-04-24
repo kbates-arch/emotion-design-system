@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../button/Button'
 import './DownloadButton.css'
 
 type Props = {
@@ -7,16 +8,11 @@ type Props = {
   href?: string
 }
 
-/**
- * I am placing this component in `atoms` because it's a single, reusable
- * UI control (a button) with no internal composition — it is an atomic element.
- */
 export default function DownloadButton({
   label = 'Download',
   filename = 'file.txt',
   href,
 }: Props) {
-  // If href is provided, create an anchor download; otherwise trigger a blob download fallback.
   const handleClick = () => {
     if (href) {
       const a = document.createElement('a')
@@ -29,7 +25,6 @@ export default function DownloadButton({
       return
     }
 
-    // Fallback: download a small text file
     const blob = new Blob(['Hello from the design system'], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
@@ -42,13 +37,8 @@ export default function DownloadButton({
   }
 
   return (
-    <button
-      type="button"
-      className="download-button download-button--primary"
-      onClick={handleClick}
-      aria-label={label}
-    >
+    <Button variant="primary" size="md" onClick={handleClick}>
       <span className="download-button__label">{label}</span>
-    </button>
+    </Button>
   )
 }

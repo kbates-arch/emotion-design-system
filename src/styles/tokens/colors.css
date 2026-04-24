@@ -1,82 +1,90 @@
 :root {
-  /*
-    Color scales stored as H S L triplets so usages can create alpha variants:
-    Example: `color: hsl(var(--color-gray-700));` or `background: hsl(var(--color-primary-500) / 0.08);`
-  */
+  /* Design tokens — updated per designer spec */
 
-  /* Primary (indigo) */
-  --color-primary-50: 225 95% 98%;
-  --color-primary-100: 225 90% 96%;
-  --color-primary-200: 225 80% 92%;
-  --color-primary-300: 225 70% 84%;
-  --color-primary-400: 225 60% 68%;
-  --color-primary-500: 222 89% 56%; /* main */
-  --color-primary-600: 222 80% 48%;
-  --color-primary-700: 222 70% 36%;
-  --color-primary-800: 222 60% 28%;
-  --color-primary-900: 222 55% 18%;
+  /* --- Colors --- */
+  /* Primary Palette (Greens) */
+  --color-primary-dark: #12372A;     /* Deep forest green (Buttons/Headers) */
+  --color-primary-main: #436850;     /* Muted sage green */
+  --color-primary-light: #ADBC9F;    /* Light olive green */
+  --color-accent-green: #2ECC71;     /* Vibrant green for status/highlights */
 
-  /* Secondary (magenta) */
-  --color-secondary-50: 320 95% 98%;
-  --color-secondary-100: 320 90% 95%;
-  --color-secondary-200: 320 80% 90%;
-  --color-secondary-300: 320 70% 80%;
-  --color-secondary-400: 320 60% 68%;
-  --color-secondary-500: 292 78% 58%;
-  --color-secondary-600: 292 70% 50%;
-  --color-secondary-700: 292 60% 40%;
-  --color-secondary-800: 292 50% 32%;
-  --color-secondary-900: 292 45% 20%;
+  /* Neutral Palette */
+  --color-bg-main: #FBFBFB;          /* Soft off-white background */
+  --color-surface: #FFFFFF;          /* Pure white card backgrounds */
+  --color-text-primary: #1A1A1A;     /* Near black for headings */
+  --color-text-secondary: #717171;   /* Medium gray for subtext */
+  --color-border: #E8E8E8;           /* Light gray for borders/dividers */
 
-  /* Grays / neutrals (0 = white, 900 = almost black) */
-  --color-gray-0: 0 0% 100%;
+  /* Semantic Colors */
+  --color-status-pending: #F39C12;   /* Amber for "Pending" */
+  --color-status-progress: #3498DB;  /* Blue for "In Progress" */
+  --color-error: #E74C3C;            /* Red for stop/delete buttons */
+
+  /* --- Spacing & Layout --- */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* --- Borders & Shadows --- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;                  /* Small components */
+  --radius-md: 16px;                 /* Buttons and standard cards */
+  --radius-lg: 24px;                 /* Main dashboard containers */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* --- Typography --- */
+  --font-family: 'Inter', -apple-system, sans-serif;
+  --font-size-xs: 0.75rem;           /* 12px */
+  --font-size-sm: 0.875rem;          /* 14px */
+  --font-size-base: 1rem;            /* 16px */
+  --font-size-lg: 1.25rem;           /* 20px */
+  --font-size-xl: 2rem;              /* 32px (Dashboard Title) */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Compatibility aliases (previous token names used across the codebase) */
+  --color-bg: var(--color-bg-main);
+  --color-text: var(--color-text-primary);
+  --color-text-strong: var(--color-text-primary);
+  --color-accent: var(--color-accent-green);
+  --color-success: var(--color-accent-green);
+  --color-warning: var(--color-status-pending);
+  --color-danger: var(--color-error);
+
+  /* Legacy/compat tokens expected by existing styles */
+  /* Secondary/accent as H S L triplet for older usages (hsl(var(--...))) */
+  --color-secondary-500: 145 63% 49%; /* approx H S L for #2ECC71 */
+  --color-on-accent: #FFFFFF;
+  --color-accent-weak: hsl(var(--color-secondary-500) / 0.08);
+  --color-accent-border: hsl(var(--color-secondary-500) / 0.28);
+
+  /* Small gray tokens used by some legacy styles */
   --color-gray-50: 210 18% 98%;
-  --color-gray-100: 210 14% 96%;
   --color-gray-200: 210 12% 90%;
-  --color-gray-300: 215 12% 80%;
-  --color-gray-400: 220 11% 70%;
-  --color-gray-500: 220 10% 60%;
-  --color-gray-600: 220 11% 45%;
   --color-gray-700: 220 12% 32%;
-  --color-gray-800: 220 13% 18%;
-  --color-gray-900: 220 14% 10%;
 
-  /* Semantic colors */
-  --color-success-500: 142 64% 40%;
-  --color-warning-500: 38 100% 50%;
-  --color-danger-500: 8 70% 48%;
+  /* Shadow alias used across the app */
+  --color-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
-  /* Semantic aliases (material for components) */
-  --color-bg: hsl(var(--color-gray-0));
-  --color-surface: hsl(var(--color-gray-50));
-  --color-muted: hsl(var(--color-gray-300));
-  --color-text: hsl(var(--color-gray-700));
-  --color-text-strong: hsl(var(--color-gray-900));
-  --color-border: hsl(var(--color-gray-200));
-  --color-shadow: rgba(2,6,23,0.08);
-
-  --color-accent: hsl(var(--color-primary-500));
-  --color-accent-weak: hsl(var(--color-primary-500) / 0.08);
-  --color-accent-border: hsl(var(--color-primary-500) / 0.28);
-  --color-on-accent: hsl(0 0% 100%);
-
-  --color-secondary: hsl(var(--color-secondary-500));
-
-  /* Utility aliases for convenience */
-  --palette-primary-500: hsl(var(--color-primary-500));
-  --palette-gray-700: hsl(var(--color-gray-700));
+  /* Convenience convenience helpers */
+  --palette-accent-r: 46;
+  --palette-accent-g: 204;
+  --palette-accent-b: 113;
 }
 
 /* Dark theme overrides using prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: hsl(var(--color-gray-900));
-    --color-surface: hsl(var(--color-gray-800));
-    --color-muted: hsl(var(--color-gray-600));
-    --color-text: hsl(var(--color-gray-200));
-    --color-text-strong: hsl(var(--color-gray-0));
-    --color-border: hsl(var(--color-gray-700));
-    --color-shadow: rgba(0,0,0,0.45);
-    --color-accent-weak: hsl(var(--color-primary-500) / 0.12);
+    --color-bg-main: #0B0E0C; /* deep background */
+    --color-surface: #0F1311;
+    --color-text-primary: #ECECEC;
+    --color-text-secondary: #A6A6A6;
+    --color-border: rgba(255,255,255,0.06);
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.6);
+    --shadow-md: 0 6px 18px rgba(0,0,0,0.7);
   }
 }

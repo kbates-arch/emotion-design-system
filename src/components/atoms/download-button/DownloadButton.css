@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 1px solid transparent;
   background: hsl(var(--color-secondary-500));
   color: var(--color-on-accent);
