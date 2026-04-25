@@ -21,9 +21,10 @@
 
 /* Variants */
 .btn--primary {
-  background-color: var(--color-primary-dark);
+  background: linear-gradient(180deg, var(--color-primary-main), var(--color-primary-dark));
   color: var(--color-surface);
-  box-shadow: var(--shadow-sm);
+  border-radius: 100px;
+  box-shadow: 0 8px 24px rgba(18,55,42,0.12);
 }
 .btn--primary:hover { opacity: 0.95; transform: translateY(-1px); }
 .btn--primary:active { transform: translateY(0); }
