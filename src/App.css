@@ -70,6 +70,61 @@
   }
 }
 
+/* App layout helpers */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-centered {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.hero-centered h1 { margin: 0 0 12px; }
+.hero-centered p { margin: 0 0 28px; color: var(--color-text-secondary); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.rating-caption { font-size: 13px; color: var(--color-text-tertiary); }
+
+.app-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 18px 0 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.footer-actions { display: flex; gap: 12px; align-items:center }
+
+@media (max-width: 900px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .app-container { padding: 24px 16px; }
+  .app-footer { flex-direction: column; align-items: stretch; }
+}
+
 #next-steps {
   display: flex;
   border-top: 1px solid var(--border);

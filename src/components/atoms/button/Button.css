@@ -22,7 +22,7 @@
 /* Variants */
 .btn--primary {
   background: linear-gradient(180deg, var(--color-primary-main), var(--color-primary-dark));
-  color: var(--color-surface);
+  color: var(--color-text-primary);
   border-radius: 100px;
   box-shadow: 0 8px 24px rgba(18,55,42,0.12);
 }
@@ -31,7 +31,7 @@
 
 .btn--secondary {
   background-color: var(--color-primary-main);
-  color: var(--color-surface);
+  color: var(--color-text-primary);
 }
 .btn--secondary:hover { opacity: 0.95; }
 
@@ -44,7 +44,7 @@
 
 .btn--danger {
   background: var(--color-error);
-  color: var(--color-surface);
+  color: var(--color-text-primary);
 }
 .btn--danger:hover { opacity: 0.95; }
 
@@ -58,7 +58,7 @@
 /* Outline variant */
 .btn--outline {
   background: transparent;
-  color: var(--color-primary-main);
+  color: var(--color-text-primary);
   border-color: var(--color-primary-main);
 }
 .btn--outline:hover { background: rgba(67, 104, 80, 0.04); }
@@ -74,7 +74,7 @@
 /* Link style */
 .btn--link {
   background: transparent;
-  color: var(--color-primary-main);
+  color: var(--color-text-primary);
   border: none;
   padding: 0.25rem 0.5rem;
   text-decoration: underline;

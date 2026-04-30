@@ -3,17 +3,18 @@
 
   /* --- Colors --- */
   /* Primary Palette (Greens) */
-  --color-primary-dark: #12372A;     /* Deep forest green (Buttons/Headers) */
-  --color-primary-main: #436850;     /* Muted sage green */
-  --color-primary-light: #ADBC9F;    /* Light olive green */
-  --color-accent-green: #2ECC71;     /* Vibrant green for status/highlights */
+  --color-primary-dark: #0b1320;     /* reserved */
+  --color-primary-main: #0b1320;
+  --color-primary-light: #172033;
+  --color-accent-green: #2ECC71;     /* Vibrant green for status/highlights (legacy) */
 
   /* Neutral Palette */
-  --color-bg-main: #FBFBFB;          /* Soft off-white background */
-  --color-surface: #FFFFFF;          /* Pure white card backgrounds */
-  --color-text-primary: #1A1A1A;     /* Near black for headings */
-  --color-text-secondary: #717171;   /* Medium gray for subtext */
-  --color-border: #E8E8E8;           /* Light gray for borders/dividers */
+  --color-bg-main: #020617;          /* deep Navy-Black (slate-950) */
+  --color-surface: #0f1724;          /* slightly lighter slate-900 for surfaces */
+  --color-text-primary: #FFFFFF;     /* Pure white for headings */
+  --color-text-secondary: #94A3B8;   /* muted slate-400 for descriptions */
+  --color-text-tertiary: #7C8B9A;    /* small muted caption text */
+  --color-border: #0f1724;           /* subtle border on dark surface */
 
   /* Semantic Colors */
   --color-status-pending: #F39C12;   /* Amber for "Pending" */
@@ -74,15 +75,20 @@
   --palette-accent-r: 46;
   --palette-accent-g: 204;
   --palette-accent-b: 113;
+  
+  /* New tokens for icons and ratings */
+  --color-icon-accent: #60A5FA;      /* Electric Blue (Tailwind blue-400) */
+  --color-star-fill: #A78BFA;        /* Purple (Tailwind purple-400) for filled stars */
+  --color-rating-bg: #0f1724;        /* Tailwind slate-900 for rating containers */
 }
 
 /* Dark theme overrides using prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg-main: #0B0E0C; /* deep background */
-    --color-surface: #0F1311;
-    --color-text-primary: #ECECEC;
-    --color-text-secondary: #A6A6A6;
+    --color-bg-main: #020617; /* deep background */
+    --color-surface: #0f1724;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #94A3B8;
     --color-border: rgba(255,255,255,0.06);
     --shadow-sm: 0 2px 6px rgba(0,0,0,0.6);
     --shadow-md: 0 6px 18px rgba(0,0,0,0.7);

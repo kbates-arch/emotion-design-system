@@ -35,17 +35,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
+    /* Mirror tokens from colors.css for dark scheme */
+    --text: var(--color-text-primary);
+    --text-h: var(--color-text-strong);
+    --bg: var(--color-bg-main);
+    --border: var(--color-border);
+    --code-bg: var(--color-surface);
+    --accent: var(--color-accent);
+    --accent-bg: var(--color-accent-weak);
+    --accent-border: var(--color-accent-border);
     --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --shadow: var(--color-shadow);
   }
 
   #social .button-icon {
@@ -67,6 +67,8 @@
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
 }
 
 h1,

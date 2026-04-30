@@ -6,12 +6,16 @@ type Props = {
   label?: string
   filename?: string
   href?: string
+  size?: 'sm' | 'md' | 'lg'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'outline' | 'tertiary' | 'link'
 }
 
 export default function DownloadButton({
   label = 'Download',
   filename = 'file.txt',
   href,
+  size = 'md',
+  variant = 'primary',
 }: Props) {
   const handleClick = () => {
     if (href) {
@@ -37,7 +41,7 @@ export default function DownloadButton({
   }
 
   return (
-    <Button variant="primary" size="md" onClick={handleClick}>
+    <Button variant={variant} size={size} onClick={handleClick}>
       <span className="download-button__label">{label}</span>
     </Button>
   )
