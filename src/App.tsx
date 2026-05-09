@@ -213,6 +213,52 @@ export default function App() {
           </div>
         </section>
       </main>
+<footer className="footer" id="contact">
+  <div className="footer-grid">
+
+    <div className="footer-brand">
+      <div className="logo footer-logo">
+        <span className="logo-mark"></span>
+        <span>Velvet & Crumbs</span>
+      </div>
+
+      <p>
+        Soft cakes, handcrafted desserts, and sweet moments
+        made fresh every day.
+      </p>
+    </div>
+
+    <div className="footer-links">
+      <h4>Explore</h4>
+
+      <a href="#home">Home</a>
+      <a href="#popular">Popular</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+
+    <div className="footer-links">
+      <h4>Visit</h4>
+
+      <p>New York City</p>
+      <p>Open Daily</p>
+      <p>8AM — 9PM</p>
+    </div>
+
+    <div className="footer-links">
+      <h4>Follow</h4>
+
+      <a href="/">Instagram</a>
+      <a href="/">TikTok</a>
+      <a href="/">Pinterest</a>
+    </div>
+
+  </div>
+
+  <div className="footer-bottom">
+    © 2026 Velvet & Crumbs — Made with sugar & love.
+  </div>
+</footer>
     </div>
   )
 }

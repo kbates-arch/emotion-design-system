@@ -42,7 +42,7 @@ body::before {
       rgba(234, 215, 207, 0.16) 60%,
       rgba(234, 215, 207, 0.06) 100%
     ),
-    url('./assets/images/dessert 1.jpg');
+    url('./assets/images/dessert 4.jpg');
 
   background-size: cover;
   background-position: center;
@@ -590,4 +590,55 @@ body::before {
   box-shadow: 0 10px 30px rgba(91, 51, 36, 0.08);
 
   white-space: nowrap;
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  margin-top: 80px;
+  background: #e7d2c8;
+  padding: 70px 64px 30px;
+}
+
+.footer-grid {
+  max-width: 1280px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-brand p {
+  color: #6b5a57;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links h4 {
+  margin: 0 0 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.footer-links a,
+.footer-links p {
+  margin: 0;
+  color: #5b3324;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(91, 51, 36, 0.15);
+  padding-top: 24px;
+  text-align: center;
+  color: #6b5a57;
 }
