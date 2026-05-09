@@ -5,36 +5,37 @@ export default function NavBar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="nav-outer">
-      <nav className="nav-inner">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <div className="logo-box">ED</div>
-          </div>
-
-          <div className="nav-center">
-            <div className="nav-links">
-              <a href="#">Home</a>
-              <a href="#">Services</a>
-              <a href="#">About</a>
-            </div>
-          </div>
-
-          <div className="nav-right">
-            <a className="cta" href="#">Contact</a>
-            <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setOpen(!open)}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-            </button>
-          </div>
+    <header className="site-header">
+      <div className="header-inner">
+        <div className="brand">
+          <div className="brand-icon" aria-hidden="true"></div>
+          <div className="brand-name">Velvet & Crumbs</div>
         </div>
 
-        <div className={`mobile-menu ${open ? 'open' : ''}`}>
+        <nav className="main-nav">
           <a href="#">Home</a>
-          <a href="#">Services</a>
-          <a href="#">About</a>
-          <a href="#" className="cta">Contact</a>
+          <a href="#menu">Menu</a>
+          <a href="#popular">Popular</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <div className="header-actions">
+          <button className="btn btn-primary">Order Now</button>
+          <button className="hamburger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}>
+            <span></span><span></span><span></span>
+          </button>
         </div>
-      </nav>
-    </div>
+      </div>
+
+      <div className={`mobile-menu ${open ? 'open' : ''}`}>
+        <a href="#">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#popular">Popular</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <button className="btn btn-outline">Order Now</button>
+      </div>
+    </header>
   )
 }

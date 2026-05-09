@@ -1,36 +1,23 @@
-@import './styles/tokens/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
 
 :root {
-  /* Typography families */
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --heading: 'Playfair Display', serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  /* Link core UI variables to palette tokens */
-  --text: var(--color-text);
-  --text-h: var(--color-text-strong);
-  --bg: var(--color-bg);
-  --border: var(--color-border);
-  --code-bg: var(--color-surface);
-  --accent: var(--color-accent);
-  --accent-bg: var(--color-accent-weak);
-  --accent-border: var(--color-accent-border);
-  --social-bg: hsl(var(--color-gray-50) / 0.5);
-  --shadow: var(--color-shadow);
+  --bg: linear-gradient(180deg,#fffaf6,#fbf7f2);
+  --text: #6b5a57;
+  --text-h: #7a4b2a;
+  --border: rgba(122,75,42,0.06);
+  --shadow: 0 18px 40px rgba(122,75,42,0.12);
 
-  font: 18px/145% var(--sans);
+  font: 18px/1.45 var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,23 +40,9 @@
   }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
+#root { box-sizing: border-box; min-height: 100vh }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-}
+body{margin:0;background:var(--bg);color:var(--text);}
 
 h1,
 h2 {

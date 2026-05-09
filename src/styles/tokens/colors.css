@@ -1,96 +1,83 @@
 :root {
-  /* Design tokens — updated per designer spec */
-
   /* --- Colors --- */
-  /* Primary Palette (Greens) */
-  --color-primary-dark: #0b1320;     /* reserved */
-  --color-primary-main: #0b1320;
-  --color-primary-light: #172033;
-  --color-accent-green: #2ECC71;     /* Vibrant green for status/highlights (legacy) */
-
+  /* Primary Palette (Warm & Earthy) */
+  --color-bg-hero: #E8D5D0;          /* Warm dusty rose (Hero background) */
+  --color-bg-body: #F9F3EB;          /* Light cream (Main body background) */
+  --color-primary-dark: #3E2723;     /* Deep chocolate brown (Headings & Buttons) */
+  --color-accent-tan: #D7C0AE;       /* Soft tan (Active states & cards) */
+  --color-white: #FFFFFF;            /* Pure white (Image plates & accents) */
+  
   /* Neutral Palette */
-  --color-bg-main: #020617;          /* deep Navy-Black (slate-950) */
-  --color-surface: #0f1724;          /* slightly lighter slate-900 for surfaces */
-  --color-text-primary: #FFFFFF;     /* Pure white for headings */
-  --color-text-secondary: #94A3B8;   /* muted slate-400 for descriptions */
-  --color-text-tertiary: #7C8B9A;    /* small muted caption text */
-  --color-border: #0f1724;           /* subtle border on dark surface */
-
-  /* Semantic Colors */
-  --color-status-pending: #F39C12;   /* Amber for "Pending" */
-  --color-status-progress: #3498DB;  /* Blue for "In Progress" */
-  --color-error: #E74C3C;            /* Red for stop/delete buttons */
-
-  /* --- Spacing & Layout --- */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-
-  /* --- Borders & Shadows --- */
-  --radius-xs: 4px;
-  --radius-sm: 8px;                  /* Small components */
-  --radius-md: 16px;                 /* Buttons and standard cards */
-  --radius-lg: 24px;                 /* Main dashboard containers */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --color-text-main: #3E2723;        /* Dark brown for high readability */
+  --color-text-muted: #7D6E66;       /* Softened brown for body copy/subtitles */
+  --color-border-light: #E0D3CC;     /* Subtle borders for inputs/dividers */
 
   /* --- Typography --- */
-  --font-family: 'Inter', -apple-system, sans-serif;
-  --font-size-xs: 0.75rem;           /* 12px */
-  --font-size-sm: 0.875rem;          /* 14px */
-  --font-size-base: 1rem;            /* 16px */
-  --font-size-lg: 1.25rem;           /* 20px */
-  --font-size-xl: 2rem;              /* 32px (Dashboard Title) */
+  /* Elegant Serif for Branding/Headers */
+  --font-family-serif: 'Playfair Display', serif; 
+  /* Clean Sans-Serif for Navigation/Body */
+  --font-family-sans: 'Inter', -apple-system, sans-serif;
+
+  --font-size-xs: 0.75rem;           /* 12px (Captions) */
+  --font-size-sm: 0.938rem;          /* 15px (Nav & Body) */
+  --font-size-base: 1.125rem;        /* 18px (Introduction text) */
+  --font-size-lg: 2rem;              /* 32px (Section headers) */
+  --font-size-xl: 3.5rem;            /* 56px (Hero title) */
+
   --font-weight-regular: 400;
   --font-weight-medium: 500;
-  --font-weight-bold: 600;
+  --font-weight-bold: 700;
 
-  /* Compatibility aliases (previous token names used across the codebase) */
-  --color-bg: var(--color-bg-main);
-  --color-text: var(--color-text-primary);
-  --color-text-strong: var(--color-text-primary);
-  --color-accent: var(--color-accent-green);
-  --color-success: var(--color-accent-green);
-  --color-warning: var(--color-status-pending);
-  --color-danger: var(--color-error);
+  /* --- Spacing & Layout --- */
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
 
-  /* Legacy/compat tokens expected by existing styles */
-  /* Secondary/accent as H S L triplet for older usages (hsl(var(--...))) */
-  --color-secondary-500: 145 63% 49%; /* approx H S L for #2ECC71 */
-  --color-on-accent: #FFFFFF;
-  --color-accent-weak: hsl(var(--color-secondary-500) / 0.08);
-  --color-accent-border: hsl(var(--color-secondary-500) / 0.28);
-
-  /* Small gray tokens used by some legacy styles */
-  --color-gray-50: 210 18% 98%;
-  --color-gray-200: 210 12% 90%;
-  --color-gray-700: 220 12% 32%;
-
-  /* Shadow alias used across the app */
-  --color-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-
-  /* Convenience convenience helpers */
-  --palette-accent-r: 46;
-  --palette-accent-g: 204;
-  --palette-accent-b: 113;
+  /* --- Borders & Effects --- */
+  --radius-sm: 8px;                  /* Minimal rounding */
+  --radius-md: 20px;                 /* Standard card rounding */
+  --radius-lg: 40px;                 /* Large sections & high-round buttons */
+  --radius-full: 9999px;             /* Pill buttons (Add to cart) */
   
-  /* New tokens for icons and ratings */
-  --color-icon-accent: #60A5FA;      /* Electric Blue (Tailwind blue-400) */
-  --color-star-fill: #A78BFA;        /* Purple (Tailwind purple-400) for filled stars */
-  --color-rating-bg: #0f1724;        /* Tailwind slate-900 for rating containers */
+  --shadow-soft: 0 10px 30px rgba(62, 39, 35, 0.05);
 }
 
-/* Dark theme overrides using prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg-main: #020617; /* deep background */
-    --color-surface: #0f1724;
-    --color-text-primary: #FFFFFF;
-    --color-text-secondary: #94A3B8;
-    --color-border: rgba(255,255,255,0.06);
-    --shadow-sm: 0 2px 6px rgba(0,0,0,0.6);
-    --shadow-md: 0 6px 18px rgba(0,0,0,0.7);
-  }
+/* --- Base Styles Using Tokens --- */
+
+body {
+  background-color: var(--color-bg-body);
+  color: var(--color-text-main);
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family-serif);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+}
+
+.hero-section {
+  background-color: var(--color-bg-hero);
+  padding: var(--spacing-xl) 0;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+}
+
+.btn-primary {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-body);
+  padding: 12px 32px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  cursor: pointer;
+}
+
+.product-card {
+  background-color: var(--color-accent-tan);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: transform 0.3s ease;
 }
